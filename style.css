@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+.container h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+.container .input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.container .input-group input[type=text] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.container .input-group button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.container .input-group button:hover {
+  background-color: rgb(51.6956521739, 206.3043478261, 87);
+}
+.container ul {
+  list-style-type: none;
+  padding: 0;
+}
+.container ul li {
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.container ul li.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+.container ul li button {
+  background-color: #dc3545;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.container ul li button:hover {
+  background-color: rgb(209.4151898734, 36.2848101266, 52.8721518987);
+}
+
+/*# sourceMappingURL=style.css.map */

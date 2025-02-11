@@ -1,0 +1,145 @@
+@use "sass:color";
+
+$primary-color: #007bff;
+$danger-color: #dc3545;
+$background-color: #f9f9f9;
+$text-color: #fff;
+$border-radius: 4px;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+
+  height: 100vh;
+}
+h1 {
+  @include flex-center;
+  font-family: "Darumadrop One", serif;
+  color: #007bff;
+}
+
+.container {
+  background: #c9d2d8;
+  padding: 50px;
+  border-radius: $border-radius;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  height: 50vh;
+  text-align: center;
+  margin: auto;
+
+  h2 {
+    margin-bottom: 20px;
+    color: $text-color;
+  }
+
+  .input-group {
+    display: flex;
+    gap: 1px;
+    margin-bottom: 10px;
+
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 20px;
+      outline: none;
+      color: #333333;
+    }
+
+    button {
+      margin-left: 10px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: $border-radius;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: color.adjust($primary-color, $lightness: 10%);
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      background-color: #cdd7dba6;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 5px;
+      border-radius: 20px;
+      animation: fadeIn 0.3s ease-in-out;
+      @include flex-center;
+      justify-content: space-between;
+
+      &.completed span {
+        text-decoration: line-through;
+        color: #888;
+      }
+
+      button {
+        background-color: $danger-color;
+        border: none;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: $border-radius;
+        cursor: pointer;
+
+        &:hover {
+          background-color: color.scale($danger-color, $lightness: -20%);
+        }
+      }
+      input[type="checkbox"] {
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        background-color: #ddd;
+        border: 2px solid $primary-color;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+
+        &:checked {
+          background: $primary-color;
+
+          &::after {
+            content: "✔";
+            font-size: 14px;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
